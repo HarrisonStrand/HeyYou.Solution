@@ -6,7 +6,7 @@
 
 <div align="center">
 <img src="https://github.com/agatakolohe.png" width="200px" height="auto" >
-<img src="https://github.com/harrisonstrand@gmail.com" width="200px" height="auto" >
+<img src="https://github.com/HarrisonStrand.png" width="200px" height="auto" >
 </div>
 <h3 align="center">Hey You Message Board, 01-19-2021</h3>
 <h4 align="center"> By Agata Kolodziej & Harrison Strand</h4>
@@ -14,6 +14,19 @@
 ## Description
 
 Many-to-many, many messages belong to many groups and many groups belong to many messages.
+Model: Message
+
+- MessageTitle
+- MessageBody
+- Author
+- MessageDate
+
+Model: Group
+
+- GroupName
+- GroupDescription
+
+Strech goal: Tags
 Join GroupMessage
 
 ## User Stories
