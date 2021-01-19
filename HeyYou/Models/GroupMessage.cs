@@ -4,9 +4,9 @@ namespace HeyYou.Models
     {
         public int GroupMessageId { get; set; }
         public int MessageId { get; set; }
-        public Message Message { get; set; }
+        public virtual Message Message { get; set; }
         public int GroupId { get; set; }
-        public Group Group { get; set; }
+        public virtual Group Group { get; set; }
 
     }
 }

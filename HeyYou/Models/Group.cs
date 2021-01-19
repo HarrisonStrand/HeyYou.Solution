@@ -11,6 +11,6 @@ namespace HeyYou.Models
         public int GroupId { get; set; }
         public string GroupName { get; set; }
         public string GroupDescription { get; set; }
-        public ICollection<GroupMessage> JoinEntries { get; set; }
+        public virtual ICollection<GroupMessage> JoinEntries { get; set; }
     }
 }

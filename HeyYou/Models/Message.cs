@@ -15,6 +15,6 @@ namespace HeyYou.Models
         public string MessageBody { get; set; }
         public string MessageAuthor { get; set; }
         public DateTime MessageDate { get; set; }
-        public ICollection<GroupMessage> JoinEntries { get; set; }
+        public virtual ICollection<GroupMessage> JoinEntries { get; set; }
     }
 }
