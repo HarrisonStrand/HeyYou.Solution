@@ -26,8 +26,8 @@ Model: Group
 - GroupName
 - GroupDescription
 
-Strech goal: Tags
-Join GroupMessage
+Join Model: GroupMessage
+Strech goal: Tags, Authentication
 
 ## User Stories
 
