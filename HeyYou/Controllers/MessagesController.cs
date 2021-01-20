@@ -34,14 +34,6 @@ namespace HeyYou.Controllers
                 query = query.Where(entry => entry.JoinEntries.Where(join => join.Group.GroupName == groupName).Count() > 0);
             }
 
-            // foreach (Message message in query)
-            // {
-            //     foreach (GroupMessage join in message.JoinEntries)
-            //     {
-            //         Console.WriteLine(join);
-            //     }
-            // }
-
             return query.ToList();
         }
 

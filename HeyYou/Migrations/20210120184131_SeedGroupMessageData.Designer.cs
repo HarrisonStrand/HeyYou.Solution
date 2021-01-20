@@ -3,14 +3,16 @@ using System;
 using HeyYou.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HeyYou.Migrations
 {
     [DbContext(typeof(HeyYouContext))]
-    partial class HeyYouContextModelSnapshot : ModelSnapshot
+    [Migration("20210120184131_SeedGroupMessageData")]
+    partial class SeedGroupMessageData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

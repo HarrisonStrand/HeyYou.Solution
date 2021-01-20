@@ -3,14 +3,16 @@ using System;
 using HeyYou.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HeyYou.Migrations
 {
     [DbContext(typeof(HeyYouContext))]
-    partial class HeyYouContextModelSnapshot : ModelSnapshot
+    [Migration("20210120183513_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,20 +63,6 @@ namespace HeyYou.Migrations
                     b.HasIndex("MessageId");
 
                     b.ToTable("GroupMessage");
-
-                    b.HasData(
-                        new
-                        {
-                            GroupMessageId = 1,
-                            GroupId = 2,
-                            MessageId = 2
-                        },
-                        new
-                        {
-                            GroupMessageId = 2,
-                            GroupId = 1,
-                            MessageId = 1
-                        });
                 });
 
             modelBuilder.Entity("HeyYou.Models.Message", b =>
