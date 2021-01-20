@@ -18,3 +18,5 @@ namespace HeyYou.Models
         public virtual ICollection<GroupMessage> JoinEntries { get; set; }
     }
 }
+
+
