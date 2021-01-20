@@ -19,19 +19,13 @@ namespace HeyYou.Controllers
 
         //GET api/messages
         [HttpGet]
-        public ActionResult<IEnumerable<Message>> Get(string messageTitle, string groupName)
+        public ActionResult<IEnumerable<Message>> Get(string messageTitle)
         {
-            var query = _db.Messages
-            .Include(message => message.JoinEntries)
-            .ThenInclude(join => join.Group).AsQueryable();
+            var query = _db.Messages.AsQueryable();
+
             if (messageTitle != null)
             {
                 query = query.Where(entry => entry.MessageTitle == messageTitle);
-            }
-            if (groupName != null)
-            {
-                // query = query.Where(entry => entry.JoinEntries.Groups.GroupName == groupName);
-                query = query.Where(entry => entry.JoinEntries.Where(join => join.Group.GroupName == groupName).Count() > 0);
             }
 
             return query.ToList();

@@ -20,9 +20,7 @@ namespace HeyYou.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Group>> Get(string groupName)
         {
-            var query = _db.Groups
-            .Include(group => group.JoinEntries)
-            .ThenInclude(join => join.Message).AsQueryable();
+            var query = _db.Groups.AsQueryable();
             if (groupName != null)
             {
                 query = query.Where(entry => entry.GroupName == groupName);

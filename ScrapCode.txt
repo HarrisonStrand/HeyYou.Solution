@@ -1,0 +1,21 @@
+ 
+ //GET api/messages
+ query by message title and group name 
+ [HttpGet]
+        public ActionResult<IEnumerable<Message>> Get(string messageTitle, string groupName)
+        {
+            var query = _db.Messages
+            .Include(message => message.JoinEntries)
+            .ThenInclude(join => join.Group).AsQueryable();
+            if (messageTitle != null)
+            {
+                query = query.Where(entry => entry.MessageTitle == messageTitle);
+            }
+            if (groupName != null)
+            {
+                // query = query.Where(entry => entry.JoinEntries.Groups.GroupName == groupName);
+                query = query.Where(entry => entry.JoinEntries.Where(join => join.Group.GroupName == groupName).Count() > 0);
+            }
+
+            return query.ToList();
+        }
