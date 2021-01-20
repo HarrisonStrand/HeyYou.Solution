@@ -1,25 +1,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using HeyYou.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace HeyYou.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/groups")]
     [ApiController]
-    public class GroupsController : ControllerBase
+    public class GroupsV1Controller : ControllerBase
     {
         private HeyYouContext _db;
-        public GroupsController(HeyYouContext db)
+        public GroupsV1Controller(HeyYouContext db)
         {
             _db = db;
         }
 
-        //GET api/groups
+        //GET api/groups/groups?groupName=queen
         [HttpGet]
         public ActionResult<IEnumerable<Group>> Get(string groupName)
         {
+
             var query = _db.Groups.AsQueryable();
             if (groupName != null)
             {
@@ -27,6 +31,27 @@ namespace HeyYou.Controllers
             }
             return query.ToList();
         }
+    }
+
+    [ApiVersion("2.0")]
+    [Route("api/groups")]
+    [ApiController]
+    public class GroupsV2Controller : ControllerBase
+    {
+        private HeyYouContext _db;
+        public GroupsV2Controller(HeyYouContext db)
+        {
+            _db = db;
+        }
+
+        //GET api/groups?api-version=2.0
+        [HttpGet]
+        public ActionResult<IEnumerable<Group>> Get()
+        {
+            var query = _db.Groups.AsQueryable();
+            return query.ToList();
+        }
+
 
         // POST api/groups
         [HttpPost]

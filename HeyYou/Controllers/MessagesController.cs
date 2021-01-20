@@ -1,18 +1,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using HeyYou.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace HeyYou.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/mesages")]
     [ApiController]
-    public class MessagesController : ControllerBase
+    public class MessagesV1Controller : ControllerBase
     {
         private HeyYouContext _db;
-        public MessagesController(HeyYouContext db)
+        public MessagesV1Controller(HeyYouContext db)
         {
             _db = db;
         }
@@ -29,6 +31,25 @@ namespace HeyYou.Controllers
             }
 
             return query.ToList();
+        }
+    }
+
+    [ApiVersion("2.0")]
+    [Route("api/messages")]
+    [ApiController]
+    public class MessagesV2Controller : ControllerBase
+    {
+        private HeyYouContext _db;
+        public MessagesV2Controller(HeyYouContext db)
+        {
+            _db = db;
+        }
+
+        //GET api/messages
+        [HttpGet]
+        public ActionResult<IEnumerable<Message>> Get(string messageTitle)
+        {
+            return _db.Messages.ToList();
         }
 
         // POST api/messages
