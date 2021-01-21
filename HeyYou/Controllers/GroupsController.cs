@@ -21,7 +21,7 @@ namespace HeyYou.Controllers
 
         //GET api/groups/groups?groupName=queen
         [HttpGet]
-        public ActionResult<IEnumerable<Group>> Get(string groupName)
+        protected ActionResult<IEnumerable<Group>> Get(string groupName)
         {
 
             var query = _db.Groups.AsQueryable();

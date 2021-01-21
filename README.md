@@ -145,9 +145,10 @@ Create a connection string to connect the database to the web application
 
 ## Known Bugs
 
-`.AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);`
+Fix referencing loop: `.AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);`
 
 Versioning make sure controller name and routes match
+Swashbuckle: change access modifier in groups controller line 24 from public to protected
 
 ## Support and Contact Details
 
@@ -166,7 +167,11 @@ If any errors or bugs occur with installation, delete both bin and obj folders a
 - HTML
 - MySQL
 - MySQL Workbench
+- Postman
+- Swagger/Open API
+- Swashbuckle
 - [Unsplash](https://unsplash.com/)
+- Versioning API
 - VS Code
 
 ### License
