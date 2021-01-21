@@ -2,7 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>All Messages:</h1>
+
+<ol>
+    @foreach (Message message in Model)
+    {
+        <ul>
+            <li>ID: @message.MessageId</li>
+            <li>Titke: @message.MessageTitle</li>
+            <li>Author: @message.MessageAuthor</li>
+            <li>Date: @message.MessageDate</li>
+            <li>Body: @message.MessageBody</li>
+        </ul>
+    }
+</ol>

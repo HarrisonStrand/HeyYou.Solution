@@ -7,27 +7,29 @@ namespace ClientHeyYou.Models
 {
     public class Message
     {
-        public Message()
-        {
-            this.JoinEntries = new HashSet<GroupMessage>();
-        }
+        // public Message()
+        // {
+        //     this.JoinEntries = new HashSet<GroupMessage>();
+        // }
         public int MessageId { get; set; }
         public string MessageTitle { get; set; }
         public string MessageBody { get; set; }
         public string MessageAuthor { get; set; }
         public DateTime MessageDate { get; set; }
-        public virtual ICollection<GroupMessage> JoinEntries { get; set; }
+        // public virtual ICollection<GroupMessage> JoinEntries { get; set; }
 
         public static List<Message> GetMessages()
         {
             var apiCallTask = MessagesApiHelper.GetAll();
             var result = apiCallTask.Result;
 
+            // var jsonResponse = JsonConvert.DeserializeObject<IEnumerable<Message>>(result);
             JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
             List<Message> messageList = JsonConvert.DeserializeObject<List<Message>>(jsonResponse.ToString());
 
             return messageList;
         }
+
         public static Message GetDetails(int id)
         {
             var apiCallTask = MessagesApiHelper.Get(id);

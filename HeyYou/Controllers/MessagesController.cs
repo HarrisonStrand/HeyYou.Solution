@@ -9,7 +9,7 @@ using System;
 namespace HeyYou.Controllers
 {
     [ApiVersion("1.0")]
-    [Route("api/mesages")]
+    [Route("api/messages")]
     [ApiController]
     public class MessagesV1Controller : ControllerBase
     {
