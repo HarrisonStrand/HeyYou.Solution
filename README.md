@@ -13,7 +13,7 @@
 
 ## Description
 
-TODO SEED DB TO BETTER QUERY// CREATE NEW BRANCH AND USE ONE MODEL
+TODO Client Project
 Many-to-many, many messages belong to many groups and many groups belong to many messages.
 Model: Message
 
