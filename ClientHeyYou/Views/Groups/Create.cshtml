@@ -1,0 +1,21 @@
+@* @{
+    ViewData["Title"] = "Create";
+    }
+
+    @model ClientHeyYou.Models.Group
+
+    <h2>Create a new Group</h2>
+    <hr />
+    <div class="forms">
+    @using (Html.BeginForm())
+    {
+    <h6>@Html.Label("Name")</h6>
+    @Html.TextBoxFor(model => model.GroupName)
+    <h6>@Html.Label("Description")</h6>
+    @Html.TextBoxFor(model => model.GroupDescription)
+
+    <input type="submit" value="Add Group" class="btn btn-default" />
+    }
+    </div>
+    <hr />
+    <p>@Html.ActionLink("Home", "Index", "Home")</p> *@

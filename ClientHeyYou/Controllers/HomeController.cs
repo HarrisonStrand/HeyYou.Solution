@@ -12,7 +12,7 @@ namespace ClientHeyYou.Controllers
     {
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Messages");
+            return View();
         }
     }
 }

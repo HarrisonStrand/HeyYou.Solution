@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Group Info:</h1>
+<ul>
+    <li>ID: @Model.GroupId</li>
+    <li>Name: @Model.GroupName</li>
+    <li>Description: @Model.GroupDescription</li>
+</ul>
+<br>
+
+<a href="/Groups/Edit/@(Model.GroupId)">
+    <p>Edit</p>
+</a>
+<br>
+
+<a href="/Groups">
+    <p>Return</p>
+</a>
+
+<a href="/Groups/Delete/@(Model.GroupId)">
+    <p>DELETE Group</p>
+</a>

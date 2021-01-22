@@ -1,0 +1,16 @@
+<h1>Edit Info:</h1>
+<form action="/Messages/Details/@(Model.MessageId)" method="post">
+    <label for="messageTitle">Message Title</label>
+    <input id="messageTitle" name="messageTitle" type="text" value="@(Model.MessageTitle)">
+    <label for="messageAuthor">Author: </label>
+    <input id="messageAuthor" name="messageAuthor" type="text" value="@(Model.MessageAuthor)">
+    <label for="messageDate">Date:</label>
+    <input id="messageDate" name="messageDate" type="date" value="@(Model.MessageDate)">
+    <label for="messageBody">Body:</label>
+    <input id="messageBody" name="messageBody" type="text" value="@(Model.MessageBody)">
+    <button type="submit">Submit</button>
+</form>
+
+<a href="/Messages/Details/@(Model.MessageId)">
+    <p>Return to Details</p>
+</a>

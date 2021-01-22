@@ -1,0 +1,15 @@
+<h1>Edit Info:</h1>
+<form action="/Groups/Details/@(Model.GroupId)" method="post">
+    <label for="groupName">Group Name</label>
+    <input id="groupName" name="groupName" type="text" value="@(Model.GroupName)">
+    <label for="groupDescription">Group Description</label>
+    <input id="groupDescription" name="groupDescription" type="text" value="@(Model.GroupDescription)">
+    <button type="submit">Go!</button>
+</form>
+
+<a href="/Groups/Details/@(Model.GroupId)">
+    <p>Return to Details</p>
+</a>
+<a href="/Home/Index/Home">
+    <p>Return to Details</p>
+</a>

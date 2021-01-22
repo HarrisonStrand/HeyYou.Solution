@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>All Groups:</h1>
+
+<ol>
+    @foreach (Group group in Model)
+    {
+        <ul>
+            <li>ID: @group.GroupId</li>
+            <li>Name: @group.GroupName</li>
+            <li>Description: @group.GroupDescription</li>
+        </ul>
+        <a href="/Groups/Details/@(group.GroupId)">
+            <p>View Details</p>
+        </a>
+        <br>
+    }
+</ol>
+
+<a href="/Groups/Create/">
+    <p>Create</p>
+</a>
